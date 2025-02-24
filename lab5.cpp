@@ -8,14 +8,6 @@
 
 
 
-// я знаю о наличие функции в std, просто хотелось самому сделать
-template <typename T> 
-void swap(T& first, T& second) {
-    T t = first;
-    first = second;
-    second = first;
-}
-
 template <typename T>
 void OddEvenSort(std::vector<T>& vec) {
     bool issorted = false;
@@ -25,13 +17,13 @@ void OddEvenSort(std::vector<T>& vec) {
         issorted = true;
         for (int i = 0; i < n - 1; i += 2) {
             if (vec[i] > vec[i + 1]) {
-                swap(vec[i], vec[i + 1]);
+                std::swap(vec[i], vec[i + 1]);
                 issorted = false;
             };
         }
         for (int i = 1; i < n - 1; i += 2) {
             if (vec[i] > vec[i + 1]) {
-                swap(vec[i], vec[i + 1]);
+                std::swap(vec[i], vec[i + 1]);
                 issorted = false;
             }
         }
